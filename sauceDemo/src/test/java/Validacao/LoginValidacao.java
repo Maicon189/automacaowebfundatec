@@ -16,10 +16,7 @@ public class LoginValidacao {
     }
 
     public void loginValidacao(){
-        try{
-            Assertions.assertTrue(loginPage.getLoginButton().isDisplayed());
-        } catch (Exception e){
-            e.getMessage();
-        }
+
+        Assertions.assertTrue(loginPage.getLoginButton().isDisplayed());
     }
 }

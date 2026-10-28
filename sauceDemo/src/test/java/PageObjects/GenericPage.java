@@ -14,13 +14,11 @@ public class GenericPage {
 
     public WebElement getTextTitle(){
 
-        return driver.findElement(By.xpath("//div[@id='header_container']/div[@class='header_secondary_container']/span[@class='title']"));
+        return driver.findElement(By.className("title"));
     }
-
 
     public WebElement getTextProtudo(){
 
-        return  driver.findElement(By.className("inventory_item_name"));
+        return driver.findElement(By.className("inventory_item_name"));
     }
-
 }

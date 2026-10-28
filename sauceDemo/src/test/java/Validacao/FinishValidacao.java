@@ -17,10 +17,6 @@ public class FinishValidacao {
 
     public void validacaoSucessoCompra(){
 
-        try {
-            Assertions.assertEquals("Thank you for your order!", finishPage.getFinishTextLabel().getText());
-        } catch (Exception e){
-            e.getMessage();
-        }
+        Assertions.assertEquals("Thank you for your order!", finishPage.getFinishTextLabel().getText());
     }
 }

@@ -3,6 +3,10 @@ package PageObjects;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
+
+import java.time.Duration;
 
 public class FinishPage {
 
@@ -30,7 +34,7 @@ public class FinishPage {
 
     public WebElement getMenuLogoutLink() {
 
-        return driver.findElement(By.id("logout_sidebar_link"));
+        return new WebDriverWait(driver, Duration.ofSeconds(5))
+                .until(ExpectedConditions.elementToBeClickable(By.id("logout_sidebar_link")));
     }
-
 }

@@ -17,22 +17,11 @@ public class GenericValidacao {
 
     public void validacaoTitlePages(String texto){
 
-        try{
-            String label = genericPage.getTextTitle().getText();
-            Assertions.assertEquals(texto,label);
-        } catch (Exception e){
-            e.getMessage();
-        }
+        Assertions.assertEquals(texto, genericPage.getTextTitle().getText());
     }
 
     public void validacaoProduto(){
 
-        try{
-            String labelProduto = genericPage.getTextProtudo().getText();
-            Assertions.assertEquals("Sauce Labs Onesie",labelProduto);
-
-        } catch (Exception e){
-            e.getMessage();
-        }
+        Assertions.assertEquals("Sauce Labs Onesie", genericPage.getTextProtudo().getText());
     }
 }

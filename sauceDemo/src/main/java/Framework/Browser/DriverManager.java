@@ -7,6 +7,7 @@ import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.edge.EdgeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import java.time.Duration;
 
 public class DriverManager {
 
@@ -56,10 +57,12 @@ public class DriverManager {
     public static WebDriver getDriver(TypeBrowser type){
 
         if(driver == null){
-            driver= getManagerDrive(type);
+            driver = getManagerDrive(type);
+            driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(10));
         }
         return driver;
     }
+
 
     public static void fecharDriver(){
 

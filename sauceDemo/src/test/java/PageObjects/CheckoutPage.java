@@ -1,5 +1,6 @@
 package PageObjects;
 
+import Validacao.CheckoutValidacao;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -7,6 +8,7 @@ import org.openqa.selenium.WebElement;
 public class CheckoutPage {
 
     private WebDriver driver;
+
 
     public CheckoutPage(WebDriver driver){
 

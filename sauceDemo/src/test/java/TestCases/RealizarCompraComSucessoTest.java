@@ -17,16 +17,12 @@ public class RealizarCompraComSucessoTest extends TestBase {
     CheckoutTask checkoutTask = new CheckoutTask(driver);
     FinishTask finishTask = new FinishTask(driver);
 
-
     @Test
-    public void realizarCompra() throws InterruptedException{
+    public void realizarCompra() {
 
         loginTask.efetuarLogin();
         produtoTask.selecionarProduto();
         checkoutTask.preenchercheckout();
         finishTask.finalizarCompra();
-
-
     }
-    
 }
