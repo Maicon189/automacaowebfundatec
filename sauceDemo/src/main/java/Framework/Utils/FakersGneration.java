@@ -2,6 +2,7 @@ package Framework.Utils;
 
 import net.datafaker.Faker;
 
+import java.text.Normalizer;
 import java.util.Locale;
 
 public class FakersGneration {
@@ -16,14 +17,25 @@ public class FakersGneration {
         faker = new Faker(new Locale("pt-BR"));
     }
 
+
+    public  static  String removerAcentos(String texto){
+        return Normalizer
+                .normalize(texto, Normalizer.Form.NFD)
+                .replaceAll("\\p{M}", "");
+    }
+
     public String getFirstName(){
 
-        return faker.name().firstName();
+        firstName = removerAcentos(faker.name().firstName());
+
+        return firstName;
     }
 
     public String getLastName(){
 
-        return faker.name().lastName();
+        lastName = removerAcentos(faker.name().lastName());
+
+        return lastName;
     }
 
     public String getZipCode(){
@@ -32,6 +44,8 @@ public class FakersGneration {
 
         return zipCode;
     }
+
+
 
 
 }

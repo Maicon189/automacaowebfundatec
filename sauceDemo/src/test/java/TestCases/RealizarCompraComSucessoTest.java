@@ -18,7 +18,7 @@ public class RealizarCompraComSucessoTest extends TestBase {
     FinishTask finishTask = new FinishTask(driver);
 
     @Test
-    public void realizarCompra() {
+    public void realizarCompra() throws InterruptedException {
 
         loginTask.efetuarLogin();
         produtoTask.selecionarProduto();

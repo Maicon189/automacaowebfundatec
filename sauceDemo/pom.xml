@@ -39,6 +39,8 @@
           <version>6.1.3</version>
       </dependency>
 
+
+
       <!-- Source: https://mvnrepository.com/artifact/net.datafaker/datafaker -->
       <dependency>
           <groupId>net.datafaker</groupId>
@@ -47,5 +49,70 @@
           <scope>compile</scope>
       </dependency>
 
-  </dependencies>
+      <!-- Source: https://mvnrepository.com/artifact/io.qameta.allure/allure-junit5 -->
+      <dependency>
+          <groupId>io.qameta.allure</groupId>
+          <artifactId>allure-junit5</artifactId>
+          <version>2.31.0</version>
+
+      </dependency>
+      <dependencyManagement>
+          <dependencies>
+              <dependency>
+                  <groupId>io.qameta.allure</groupId>
+                  <artifactId>allure-bom</artifactId>
+                  <version>2.15.0</version>
+                  <type> pom</type>
+                  <scope>import</scope>
+              </dependency>
+          </dependencies>
+      </dependencyManagement>
+      <dependency>
+          <build>
+              <plugin>
+                  <groupId>io.qameta.allure</groupId>
+                  <artifactId>allure-maven</artifactId>
+                  <version>2.11.2</version>
+              </plugin>
+
+              <plugin>
+                  <!-- Source: https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-surefire-plugin -->
+
+                  <groupId>org.apache.maven.plugins</groupId>
+                  <artifactId>maven-surefire-plugin</artifactId>
+                  <version>3.2.5</version>
+                  <configuration>
+                      <systemPropertyVariables>
+                          <allure.results.directory>${project.build.directory}/alluere</allure.results.directory>
+                      </systemPropertyVariables>
+                      <useModulePatch>false</useModulePatch>
+                      <argile>--enable-preview</argile>
+                  </configuration>
+              </plugin>
+
+              <plugin>
+                  <!-- Source: https://mvnrepository.com/artifact/org.apache.maven.plugins/maven-compiler-plugin -->
+                  <groupId>org.apache.maven.plugins</groupId>
+                  <artifactId>maven-compiler-plugin</artifactId>
+                  <version>3.14.1</version>
+
+                  <configuration>
+                      <encoding>UTF-8</encoding>
+                      <source>25</source>
+                      <target>25</target>
+                      <compilerArgs>--enable-preview</compilerArgs>
+                  </configuration>
+
+
+              </plugin>
+          </build>
+      </dependency>
+
+</dependencies>
+
+
+
+
+
+
 </project>

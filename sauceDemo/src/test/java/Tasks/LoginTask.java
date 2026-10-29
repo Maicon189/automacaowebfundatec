@@ -1,5 +1,6 @@
 package Tasks;
 
+import Framework.Utils.FileOperations;
 import PageObjects.LoginPage;
 import org.openqa.selenium.WebDriver;
 
@@ -16,8 +17,8 @@ public class LoginTask {
 
     public void efetuarLogin(){
 
-        loginPage.getUserNameInput().sendKeys("standard_user");
-        loginPage.getPasswordInput().sendKeys("secret_sauce");
+        loginPage.getUserNameInput().sendKeys(FileOperations.getProperties("user").getProperty("usuario"));
+        loginPage.getPasswordInput().sendKeys(FileOperations.getProperties("user").getProperty("password"));
         loginPage.getLoginButton().click();
     }
 

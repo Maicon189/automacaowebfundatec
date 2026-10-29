@@ -1,0 +1,13 @@
+package Framework.Utils;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.TakeScreenshot;
+
+
+
+
+public class TakeScreenshot {
+
+public static void
+
+}
